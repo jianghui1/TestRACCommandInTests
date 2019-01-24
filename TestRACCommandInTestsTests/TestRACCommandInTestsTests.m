@@ -8,6 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
+#import <ReactiveCocoa.h>
+#import "ViewModel.h"
+#import "ViewModel1.h"
+#import "ViewModel2.h"
+
 @interface TestRACCommandInTestsTests : XCTestCase
 
 @end
@@ -32,6 +37,24 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)test
+{
+    ViewModel *vm = [[ViewModel alloc] init];
+    [vm.command execute:nil];
+}
+
+- (void)test1
+{
+    ViewModel1 *vm = [[ViewModel1 alloc] init];
+    [vm.command execute:nil];
+}
+
+- (void)test2
+{
+    ViewModel2 *vm = [[ViewModel2 alloc] init];
+    [vm.command execute:nil];
 }
 
 @end
